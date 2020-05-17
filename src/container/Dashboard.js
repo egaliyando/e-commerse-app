@@ -1,104 +1,35 @@
 import React from "react";
-import Header from "../part/Header";
-import { Container, Row, Col } from "react-bootstrap";
-import Sidebar from "../part/Sidebar";
-import CardLink from "../component/CardLink";
-import ShowLayout from "../component/ShowLayout";
-import MyTemplate from "../component/MyTemplate";
+import Jumbotron from "../component/Jumbotron";
+import CardDashboard from "../component/CardDashboard";
+import IconVisitor from "../assets/img/visitor.png";
+import IconPageViews from "../assets/img/page_view.png";
+import IconProductSold from "../assets/img/produk_sold.png";
+import IconVisitorTotalSales from "../assets/img/total_sales.png";
+import ImageCinta from "../assets/img/cinta.png";
+import ImageSayang from "../assets/img/sayang.png";
 
 export default class Index extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        <Container fluid={true}>
-          <Row>
-            <Col sm={3}>
-              <Sidebar />
-            </Col>
-            <Col sm={9}>
-              <div>
-                <ul className="nav nav-tabs d-flex justify-content-between" id="myTab" role="tablist">
-                  <li className="nav-item" role="presentation">
-                    <a
-                      className="nav-link active"
-                      id="home-tab"
-                      data-toggle="tab"
-                      href="#home"
-                      role="tab"
-                      aria-controls="home"
-                      aria-selected="true"
-                    >
-                      Page Information
-                    </a>
-                  </li>
-                  <li className="nav-item" role="presentation">
-                    <a
-                      className="nav-link"
-                      id="profile-tab"
-                      data-toggle="tab"
-                      href="#profile"
-                      role="tab"
-                      aria-controls="profile"
-                      aria-selected="false"
-                    >
-                      Page links
-                    </a>
-                  </li>
-                  <li className="nav-item" role="presentation">
-                    <a
-                      className="nav-link"
-                      id="contact-tab"
-                      data-toggle="tab"
-                      href="#contact"
-                      role="tab"
-                      aria-controls="contact"
-                      aria-selected="false"
-                    >
-                      My Templete
-                    </a>
-                  </li>
-
-                  <li className="nav-item" role="presentation">
-                    <a
-                      className="nav-link"
-                      id="tes-tab"
-                      data-toggle="tab"
-                      href="#tes"
-                      role="tab"
-                      aria-controls="tes"
-                      aria-selected="false"
-                    >
-                      Link analytics
-                    </a>
-                  </li>
-                </ul>
-                <div className="tab-content" id="myTabContent">
-                  <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <br />
-                    <p>No Content</p>
-                  </div>
-                  <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <Row>
-                      <CardLink />
-                      <ShowLayout />
-                    </Row>
-                  </div>
-                  <div className="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    <Row>
-                      <MyTemplate />
-                      <ShowLayout />
-                    </Row>
-                  </div>
-                  <div className="tab-pane fade" id="tes" role="tabpanel" aria-labelledby="tes-tab">
-                    <br />
-                    <p>No Content</p>
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+        <Jumbotron />
+        <div className="four-box">
+          <CardDashboard title="Visitor" values="20 Visitor" IconUrl={IconVisitor} />
+          <CardDashboard title="Page Views" values="124 Views" IconUrl={IconPageViews} />
+          <CardDashboard title="Product Sold" values="23 Sold" IconUrl={IconProductSold} />
+          <CardDashboard title="Total Sales" values="Rp. 350,000" IconUrl={IconVisitorTotalSales} />
+        </div>
+        <div className="f_t">
+          <h4 className="h4_f">Send feedbacks to us!</h4>
+          <span>We want Dazlink to always evolve and help you better.</span>
+          <span>Your feedbacks and ideas would mean a lot to us!</span>
+          <div className="box_bwh">
+            <img className="cinta" src={ImageCinta} alt="" />
+            <img className="sayang" src={ImageSayang} alt="" />
+            <p className="p_f">Enter your feedbacks and ideas here</p>
+          </div>
+          <button className="bttn_submit">SUBMIT</button>
+        </div>
       </div>
     );
   }

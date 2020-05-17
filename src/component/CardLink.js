@@ -1,12 +1,11 @@
 import React from "react";
-import { Col } from "react-bootstrap";
 import "../part/Style.css";
 import IconLink from "../assets/home1.png";
 import IconStore from "../assets/img/toggle.png";
 
 const CardLink = () => {
   return (
-    <Col sm="7">
+    <div className="col-md-7">
       <h4>Link to display</h4>
       <hr className="hr-line"></hr>
       <div className="box">
@@ -36,7 +35,7 @@ const CardLink = () => {
           </div>
         </div>
       </div>
-    </Col>
+    </div>
   );
 };
 
